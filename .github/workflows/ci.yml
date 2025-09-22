@@ -23,7 +23,7 @@ jobs:
         with:
           node-version: 14
       - run: make packet-minecraft.so
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v4
         with:
           name: linux
           path: packet-minecraft.so
@@ -68,7 +68,7 @@ jobs:
           LDLIBS: ../wireshark/build/run/RelWithDebInfo/wireshark.lib
           CC: gcc
         working-directory: dissector
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v4
         with:
           name: windows
           path: dissector/packet-minecraft.dll
