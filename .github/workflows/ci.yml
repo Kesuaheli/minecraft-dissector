@@ -14,7 +14,7 @@ jobs:
   build-linux:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
           submodules: true
       - run: sudo add-apt-repository ppa:wireshark-dev/stable
@@ -36,7 +36,7 @@ jobs:
       GLIB_INCLUDE: vcpkg-export-20190318-win64ws/installed/x64-windows/include
     steps:
       - name: Checkout Wireshark
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           repository: wireshark/wireshark
           ref: wireshark-3.4.2
@@ -54,7 +54,7 @@ jobs:
       - run: cmake --build . --config RelWithDebInfo --target epan
         working-directory: wireshark/build
 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
           path: dissector
           submodules: true
